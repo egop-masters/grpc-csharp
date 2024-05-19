@@ -5,10 +5,10 @@ networks:
     external: true
 
 services:
-  csharp-go:
-    image: csharp-go
+  grpc-csharp:
+    image: grpc-csharp
     build:
-      context: csharp-go
+      context: grpc-csharp
       dockerfile: Dockerfile
     environment:
       ASPNETCORE_URLS: "http://+:80"
