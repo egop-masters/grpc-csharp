@@ -1,0 +1,17 @@
+﻿version: "3"
+
+networks:
+  masters:
+    external: true
+
+services:
+  csharp-go:
+    image: csharp-go
+    build:
+      context: csharp-go
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_URLS: "http://+:80"
+      ConnectionStrings__GrpcGoServiceUrl: "http://grpc-go:8082"
+    networks:
+      - masters
