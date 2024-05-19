@@ -77,7 +77,9 @@ app.MapGet(
                         Content = JsonContent.Create(new {Message = "Master"})
                     };
 
-                    await httpClient.SendAsync(message);
+                    var response = await httpClient.SendAsync(message);
+                    var result = await response.Content.ReadAsStringAsync();
+                    await Task.Delay(15);
                 }
             }
         );
