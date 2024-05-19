@@ -23,7 +23,7 @@ app.MapGet(
     async ([FromServices] MasterService.MasterServiceClient client) =>
     {
         var reply = await client.GetMasterDataAsync(new MasterRequest {Query = "World"});
-        Console.WriteLine("Response: " + reply.Data);
+        return Results.Ok("Response: " + reply.Data);
     }
 );
 
