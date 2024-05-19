@@ -13,5 +13,7 @@ services:
     environment:
       ASPNETCORE_URLS: "http://+:80"
       ConnectionStrings__GrpcGoServiceUrl: "http://grpc-go:8082"
+    ports:
+      - "10080:80"
     networks:
       - masters
