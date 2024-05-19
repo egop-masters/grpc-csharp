@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/egop-masters/grpc-go";
+
+package masters;
+
+service MasterService {
+    rpc GetMasterData (MasterRequest) returns (MasterResponse) {}
+}
+
+message MasterRequest {
+    string query = 1;
+}
+
+message MasterResponse {
+    string data = 1;
+}
